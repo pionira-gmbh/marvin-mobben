@@ -1,24 +1,26 @@
 package de.pionira.weichwarengemeinschaft;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
-import static org.junit.Assert.assertTrue;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class AppTest {
     @Test
-    public void shouldAnswerWithTrue() {
-        String minefield = "4 4\n" +
-                           "*...\n" +
-                           "....\n" +
-                           ".*..\n" +
-                           "....";
-        String expected = "*100\n" +
-                          "2210\n" +
-                          "1*10\n" +
-                          "1110";
+    public void minefield() {
+        String minefield = """
+                *...
+                ....
+                .*..
+                ....""";
 
-        new App().calculateMineDistances(minefield);
+        String expected = """
+                *100
+                2210
+                1*10
+                1110""";
 
-        assertTrue(true);
+        new App().calculateMineDistances(4, 4, minefield);
+
+        assertEquals(expected, minefield);
     }
 }

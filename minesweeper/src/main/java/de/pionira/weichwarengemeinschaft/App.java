@@ -4,11 +4,22 @@ public class App
 {
     public static void main( String[] args )
     {
-        String input = "";
         System.out.println( "Hello World!" );
     }
 
-    public String calculateMineDistances(String minefield) {
+    public String calculateMineDistances(int height, int width, String minefield) {
+        int[][] ints = new int[height][width];
+
+        char[] chars = minefield.toCharArray();
+
+        int h = 0;
+        int w = 0;
+        for (char ch : chars) {
+           if (ch == '\n') {
+             h++;
+           }
+        }
+
         return "";
     }
 }
