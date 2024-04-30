@@ -19,8 +19,8 @@ public class AppTest {
                 1*10
                 1110""";
 
-        new App().calculateMineDistances(4, 4, minefield);
+        String result = new App().calculateMineDistances(4, 4, minefield);
 
-        assertEquals(expected, minefield);
+        assertEquals(expected, result);
     }
 }
